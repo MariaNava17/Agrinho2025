@@ -1,0 +1,227 @@
+/* Estilos específicos para a página de Produção */
+
+/* Seção de Destaque Inicial */
+.production-hero {
+    background-color: #f0fff0; /* Verde bem claro */
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.production-hero h2 {
+    color: #28a745; /* Verde principal */
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+}
+
+.production-hero p {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+/* Seção de Visão Geral da Produção */
+.production-overview {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.production-overview h3 {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    text-align: left; /* Alinhamento à esquerda para esta seção */
+}
+
+.production-overview .lead {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+.production-overview ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.production-overview ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.production-overview ul li:last-child {
+    border-bottom: none;
+}
+
+.production-overview ul li i {
+    color: #28a745;
+    margin-right: 0.75rem;
+}
+
+/* Seção de Etapas da Produção (Cards) */
+.production-steps {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.production-steps h3 {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centralizando o título */
+}
+
+.production-steps .card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.production-steps .card:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.production-steps .card-body {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.production-steps .card-title {
+    font-size: 1.5rem;
+    color: #343a40;
+    margin-bottom: 0.75rem;
+}
+
+.production-steps .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.production-steps .icon-step {
+    font-size: 3rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+/* Seção de Industrialização */
+.industrialization-section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background-color: #e9ecef; /* Fundo cinza claro para destacar */
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+}
+
+.industrialization-section h3 {
+    color: #007bff; /* Azul para industrialização */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.industrialization-section p {
+    font-size: 1.05rem;
+    color: #495057;
+    line-height: 1.8;
+}
+
+.industrialization-section .btn-primary {
+    margin-top: 1rem;
+}
+
+/* Seção de Sustentabilidade na Produção */
+.sustainability-section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.sustainability-section h3 {
+    color: #198754; /* Verde mais escuro para sustentabilidade */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: right; /* Alinhamento à direita */
+}
+
+.sustainability-section p {
+    font-size: 1.05rem;
+    color: #495057;
+    line-height: 1.8;
+    text-align: right;
+}
+
+.sustainability-section .btn-success {
+    margin-top: 1rem;
+}
+
+/* Galeria de Produtos (Opcional) */
+.product-gallery {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.product-gallery h3 {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.product-gallery .row {
+    margin-top: 1rem;
+}
+
+.product-gallery .col-md-4 {
+    margin-bottom: 1.5rem;
+}
+
+.product-gallery .card {
+    border: none;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+.product-gallery .card-img-top {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-gallery .card-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-gallery .card-title {
+    font-size: 1.1rem;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos Responsivos (Pequenas alterações para telas menores) */
+@media (max-width: 768px) {
+    .production-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .production-hero p {
+        font-size: 1rem;
+    }
+
+    .production-overview h3,
+    .production-steps h3,
+    .industrialization-section h3,
+    .sustainability-section h3,
+    .product-gallery h3 {
+        font-size: 1.75rem;
+        text-align: center; /* Centraliza títulos em telas menores */
+    }
+
+    .sustainability-section h3,
+    .sustainability-section p {
+        text-align: center; /* Centraliza conteúdo de sustentabilidade em telas menores */
+    }
+}

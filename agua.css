@@ -1,0 +1,104 @@
+/* style.css */
+
+/* Estilos específicos para a página de água */
+body.agua-page {
+    background-color: #e0f7fa; /* Um tom de azul claro para remeter à água */
+}
+
+.cabecalho {
+    background-color: #03a9f4; /* Azul mais intenso para o cabeçalho */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar-success {
+    background-color: #4dd0e1 !important; /* Um tom de azul mais claro para a navegação */
+}
+
+.nav-link.text-white:hover {
+    color: #0277bd !important; /* Azul mais escuro no hover */
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #03a9f4; /* Azul para os títulos de seção */
+    border-bottom: 2px solid #03a9f4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #4dd0e1; /* Azul mais claro para subtítulos */
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.card {
+    border: 1px solid #b2ebf2; /* Borda sutil nos cards */
+    border-radius: 6px;
+}
+
+.card-title {
+    color: #03a9f4;
+}
+
+.btn-primary {
+    background-color: #03a9f4 !important;
+    border-color: #03a9f4 !important;
+}
+
+.btn-primary:hover {
+    background-color: #0277bd !important;
+    border-color: #0277bd !important;
+}
+
+.img-card {
+    height: 200px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    border-radius: 6px 6px 0 0;
+}
+
+.footer {
+    background-color: #03a9f4;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhor visibilidade */
+    border-radius: 50%;
+}
+
+.img-slide {
+    max-height: 400px; /* Altura máxima para as imagens do carrossel */
+    object-fit: contain; /* Garante que toda a imagem seja visível */
+    background-color: #e0f7fa; /* Fundo claro para o carrossel */
+}
+
+/* Estilos específicos para a seção de acessibilidade à água */
+.agua-section {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.agua-section h4 {
+    color: #03a9f4;
+    margin-bottom: 15px;
+}
+
+.agua-section p {
+    line-height: 1.6;
+}
