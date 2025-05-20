@@ -5,7 +5,7 @@
  body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #000000;
     background-color: #f8f9fa; /* Cinza claro suave */
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ h3 {
 p {
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #495057;
+    color: #000000;
 }
 
 .lead {
@@ -118,7 +118,7 @@ p {
 }
 
 .hero-success {
-    background-color: #28a745;
+    background-color: #5567cc;
     color: #fff;
 }
 
