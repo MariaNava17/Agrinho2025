@@ -1,0 +1,206 @@
+/* --- Seção de Contato --- */
+.contact-section {
+    padding: 3rem 0; /* Mais padding superior/inferior para a seção */
+    text-align: center; /* Centraliza o conteúdo principal */
+    background-color: #ffffff; /* Fundo branco para a seção */
+    border-radius: 10px; /* Bordas arredondadas, como o main container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra consistente */
+    margin-bottom: 2rem; /* Espaçamento abaixo da seção */
+}
+
+.contact-section h2 {
+    color: #212529; /* Cor do título principal da seção (mantido do h2 global) */
+    margin-bottom: 2rem; /* Mais espaçamento abaixo do título */
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.contact-section h2::after { /* Sublinhado para o título da seção de contato */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Largura fixa para o sublinhado */
+    height: 4px; /* Espessura do sublinhado */
+    background-color: #007bff; /* Cor azul, consistente com o tema principal */
+    border-radius: 2px;
+}
+
+.contact-section .lead {
+    font-size: 1.25rem; /* Tamanho da fonte do parágrafo de introdução */
+    color: #6c757d; /* Cor mais suave */
+    margin-bottom: 2.5rem; /* Espaçamento abaixo do parágrafo */
+    max-width: 700px; /* Limita a largura para melhor legibilidade */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Formulário de Contato --- */
+.contact-form {
+    max-width: 700px; /* Largura máxima para o formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    text-align: left; /* Alinha o texto do formulário à esquerda */
+}
+
+.contact-form .form-label {
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control {
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.contact-form .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    outline: 0;
+}
+
+.contact-form textarea.form-control {
+    min-height: 150px; /* Altura mínima para o campo de mensagem */
+    resize: vertical;
+}
+
+.contact-form .btn-submit {
+    /* Reutiliza o estilo do .btn-success existente */
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+    padding: 0.8rem 1.8rem; /* Um pouco mais de padding para o botão de envio */
+    font-size: 1.15rem; /* Levemente maior que outros botões */
+    font-weight: 700; /* Mais negrito */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem; /* Espaçamento superior */
+}
+
+.contact-form .btn-submit:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- Informações de Contato (Telefone, E-mail, Endereço) --- */
+.contact-info {
+    margin-top: 3.5rem; /* Espaçamento maior entre o formulário e as informações */
+    padding-top: 2.5rem; /* Padding superior para a seção de informações */
+    border-top: 1px solid #e0e0e0; /* Linha divisória sutil */
+    text-align: center;
+}
+
+.contact-info h3 {
+    color: #212529; /* Cor mais escura para o título */
+    margin-bottom: 2rem;
+    font-weight: 600; /* Mais negrito */
+}
+
+.contact-info ul {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinhar os itens em linha */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 1.5rem 3rem; /* Espaçamento entre os itens (vertical e horizontal) */
+}
+
+.contact-info li {
+    font-size: 1.1rem;
+    color: #5a6268;
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+}
+
+.contact-info li i {
+    font-size: 1.5rem; /* Tamanho dos ícones de contato */
+    color: #007bff; /* Cor azul para os ícones */
+    margin-right: 0.8rem; /* Espaçamento entre ícone e texto */
+}
+
+.contact-info a {
+    color: #007bff; /* Cor azul para links de email/telefone */
+    text-decoration: none; /* Remove sublinhado padrão */
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3; /* Cor azul mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+/* --- Mapa (se usar) --- */
+.map-container {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.map-container h3 {
+    color: #212529;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px; /* Altura do mapa */
+    border: 0;
+    border-radius: 8px; /* Bordas arredondadas para o mapa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para o mapa */
+}
+
+/* --- Responsividade para Contatos --- */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 2rem 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-section .lead {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-form .btn-submit {
+        padding: 0.7rem 1.4rem;
+        font-size: 1rem;
+    }
+
+    .contact-info ul {
+        flex-direction: column; /* Pilha os itens em colunas em telas menores */
+        gap: 1rem; /* Reduz o espaçamento entre os itens */
+    }
+
+    .contact-info li {
+        justify-content: center; /* Centraliza os itens empilhados */
+    }
+
+    .map-container iframe {
+        height: 300px; /* Reduz a altura do mapa em telas menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section .lead {
+        font-size: 1rem;
+    }
+}

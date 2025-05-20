@@ -1,4 +1,4 @@
-/* Estilos globais */
+/* --- Estilos Globais e Reset --- */
 body {
     padding: 0;
     margin: 0;
@@ -8,35 +8,33 @@ body {
     background-color: #f4f6f8; /* Fundo levemente texturizado */
     -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte em navegadores WebKit */
     -moz-osx-font-smoothing: grayscale; /* Melhora a renderização da fonte no Firefox */
-    /* Adicionado para um layout mais previsível com flexbox ou grid em elementos pai */
-    min-height: 100vh;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Permite que o rodapé "empurre" para baixo */
 }
 
-/* Cabeçalho - Não modificado conforme sua solicitação */
-.cabecalho {
-    background-color: #343a40;
-    color: #000000;
-    text-align: center;
-    padding: 60px 30px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* --- Cabeçalho (Header) --- */
+/* Não modificado conforme sua solicitação */
+.bg-success { /* Usando a classe do Bootstrap para o cabeçalho */
+    background-color: #28a745 !important; /* Cor verde do Bootstrap success */
 }
 
-.cabecalho h1 {
+.text-white { /* Garante que o texto seja branco onde a classe é aplicada */
+    color: #fff !important;
+}
+
+header h1 {
     font-size: 3rem;
     margin-bottom: 0.75rem;
     letter-spacing: -0.05em;
 }
 
-.cabecalho h3 {
-    color: #ffc107;
+header .lead { /* Para o parágrafo com a classe 'lead' dentro do cabeçalho */
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-/* Barra de Navegação */
+/* --- Barra de Navegação (Navbar) --- */
 .navbar {
     background-color: #ffffff; /* Fundo branco para a navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07); /* Sombra um pouco mais pronunciada e nítida */
@@ -63,8 +61,8 @@ body {
     background-color: transparent; /* Remove background no hover, optando por underline */
 }
 
-/* Efeito de sublinhado animado no hover */
-.navbar-nav .nav-link:hover::after {
+/* Efeito de sublinhado animado no hover e ativo */
+.navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     width: calc(100% - 2.2rem); /* Ajusta a largura para o padding */
@@ -72,31 +70,18 @@ body {
     background-color: #007bff;
     bottom: 0.2rem;
     left: 1.1rem; /* Alinha com o padding */
-    transform: scaleX(1);
+    transform: scaleX(0); /* Esconde o sublinhado por padrão */
     transition: transform 0.3s ease-out;
 }
 
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: calc(100% - 2.2rem);
-    height: 2px;
-    background-color: #007bff;
-    bottom: 0.2rem;
-    left: 1.1rem;
-    transform: scaleX(0); /* Esconde o sublinhado por padrão */
-    transition: transform 0.3s ease-out;
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1); /* Mostra o sublinhado no hover e para o link ativo */
 }
 
 .navbar-nav .nav-link.active {
     font-weight: 600; /* Um pouco mais de peso */
     color: #007bff !important; /* Cor azul para o link ativo */
-}
-
-/* Efeito de sublinhado para o link ativo */
-.navbar-nav .nav-link.active::after {
-    transform: scaleX(1); /* Mostra o sublinhado para o link ativo */
-    background-color: #007bff;
 }
 
 .navbar-toggler {
@@ -113,7 +98,7 @@ body {
     filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%); /* Ícone mais escuro */
 }
 
-/* Conteúdo Principal */
+/* --- Conteúdo Principal (Main) --- */
 main.container {
     padding: 40px; /* Aumento do padding */
     background-color: #fff;
@@ -180,7 +165,7 @@ p {
     border-top: 1px dashed #e9ecef; /* Linha tracejada para separar */
 }
 
-/* Imagens */
+/* --- Imagens --- */
 .img-fluid {
     max-width: 100%;
     height: auto;
@@ -193,7 +178,7 @@ p {
     transform: scale(1.02); /* Leve zoom no hover */
 }
 
-/* Cards */
+/* --- Cards --- */
 .card {
     border: 1px solid #e9ecef; /* Adicionada uma borda sutil */
     border-radius: 10px; /* Bordas mais arredondadas */
@@ -236,6 +221,7 @@ p {
     margin-bottom: 1.2rem; /* Mais espaçamento */
 }
 
+/* --- Botões --- */
 .btn-primary,
 .btn-outline-success {
     padding: 0.7rem 1.4rem; /* Mais padding */
@@ -259,6 +245,34 @@ p {
     transform: translateY(-2px); /* Leve elevação no hover */
 }
 
+.btn-warning { /* Adicionado para o botão do card de energia */
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529; /* Cor do texto para contraste */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    color: #212529;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-success { /* Adicionado para o botão do card de produção e contato */
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
 .btn-outline-success {
     color: #28a745;
     border-color: #28a745;
@@ -272,7 +286,7 @@ p {
     transform: translateY(-2px); /* Leve elevação no hover */
 }
 
-/* Carrossel */
+/* --- Carrossel --- */
 .carousel {
     border-radius: 10px; /* Bordas mais arredondadas */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
@@ -312,7 +326,7 @@ p {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil nos ícones */
 }
 
-/* Rodapé */
+/* --- Rodapé (Footer) --- */
 .footer {
     background-color: #212529; /* Preto mais escuro para o rodapé */
     color: #fff;
@@ -330,7 +344,71 @@ p {
     line-height: 1.6;
 }
 
-/* Estilos Responsivos */
+/* --- Estilos para o Formulário de Contato --- */
+/* Os inputs e textareas já são estilizados por .form-control do Bootstrap,
+   mas podemos adicionar alguns toques extras */
+.form-label {
+    font-weight: 600; /* Deixa os rótulos mais visíveis */
+    color: #343a40; /* Cor mais escura para o texto do rótulo */
+    margin-bottom: 0.5rem; /* Pequeno espaçamento abaixo do rótulo */
+}
+
+.form-control {
+    border-radius: 8px; /* Bordas mais arredondadas para os inputs */
+    padding: 0.8rem 1rem; /* Mais padding interno */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    border: 1px solid #ced4da; /* Borda padrão */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff; /* Cor da borda ao focar (azul Bootstrap) */
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Sombra ao focar */
+    outline: 0; /* Remove o outline padrão */
+}
+
+textarea.form-control {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.d-grid .btn-lg { /* Estilo para o botão de envio no formulário de contato */
+    font-size: 1.25rem; /* Torna o botão de envio maior */
+    padding: 0.8rem 1.5rem; /* Ajusta o padding */
+}
+
+/* Estilos para "Outras Formas de Contato" */
+.mt-5.text-center h4 {
+    color: #212529; /* Cor do texto do título */
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.mt-5.text-center h4::after { /* Sublinhado sutil para o título de contato */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Largura fixa */
+    height: 3px;
+    background-color: #28a745; /* Cor verde do sucesso */
+    border-radius: 2px;
+}
+
+.mt-5.text-center p {
+    margin-bottom: 0.8rem; /* Espaçamento entre as linhas de contato */
+    font-size: 1.1rem; /* Levemente maior */
+    color: #5a6268;
+}
+
+.mt-5.text-center p i {
+    font-size: 1.3rem; /* Tamanho dos ícones de contato */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
+}
+
+/* --- Estilos Responsivos --- */
 @media (max-width: 992px) { /* Adicionado um breakpoint para tablets */
     .navbar-nav .nav-link {
         padding: 0.6rem 0.8rem;
@@ -342,76 +420,85 @@ p {
 }
 
 @media (max-width: 768px) {
-    .cabecalho {
-        padding: 40px 20px;
-    }
-
-    .cabecalho h1 {
+    /* Cabeçalho */
+    header h1 {
         font-size: 2.5rem;
     }
-
-    .cabecalho h3 {
+    header .lead {
         font-size: 1.2rem;
     }
 
+    /* Main Container */
     main.container {
         padding: 20px; /* Redução do padding em telas menores */
     }
 
+    /* Seções e Títulos */
     h2 {
         font-size: 2rem;
     }
-
     h3 {
         font-size: 1.6rem;
     }
-
     p {
         font-size: 0.95rem;
     }
 
+    /* Imagens */
     .img-fluid {
         border-radius: 6px;
     }
 
+    /* Cards */
     .card {
         margin-bottom: 1.5rem; /* Espaçamento entre cards em telas menores */
     }
-
     .card-img-top {
         height: 180px; /* Ajuste da altura em telas menores */
     }
 
+    /* Botões */
     .btn-primary,
-    .btn-outline-success {
+    .btn-outline-success,
+    .btn-warning,
+    .btn-success { /* Incluído os novos botões */
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
 
+    /* Carrossel */
     .img-slide {
         max-height: 350px; /* Mais redução na altura do carrossel */
     }
-
     .carousel-control-prev,
     .carousel-control-next {
         width: 10%; /* Ajuste para celulares */
     }
-
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
         padding: 8px;
     }
 
+    /* Formulário de Contato (ajustes para mobile) */
+    .d-grid .btn-lg {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.2rem;
+    }
+    .mt-5.text-center h4::after {
+        width: 60px; /* Reduz o sublinhado em mobile */
+    }
+
+    /* Rodapé */
     .footer {
         padding: 25px;
     }
 }
 
 @media (max-width: 576px) { /* Breakpoint para celulares pequenos */
-    .cabecalho h1 {
+    header h1 {
         font-size: 2rem;
     }
-    .cabecalho h3 {
+    header .lead {
         font-size: 1rem;
     }
     h2 {
