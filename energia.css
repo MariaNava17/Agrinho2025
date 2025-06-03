@@ -1,413 +1,63 @@
-/*
- * Estilos Globais e Reset
- * ----------------------
- */
- body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #000000;
-    background-color: #f8f9fa; /* Cinza claro suave */
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/* style.css */
 
-/* Links */
-a {
-    color: #007bff; /* Azul padrão do Bootstrap */
-    text-decoration: none;
-    transition: color 0.15s ease-in-out;
-}
+/* --- Efeitos de Energia (Novas Adições) --- */
 
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Tipografia */
-h1, h2, h3, h4, h5, h6 {
-    color: #212529; /* Preto mais escuro */
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #000000;
-}
-
-.lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: #6c757d;
-}
-
-/*
- * Componentes Comuns (Personalizações do Bootstrap)
- * ------------------------------------------------
- */
-
-/* Barra de Navegação */
-.navbar {
-    padding: 0.75rem 1rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.navbar-brand {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    color: rgba(0, 0, 0, 0.7);
-    transition: color 0.15s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-    color: rgba(0, 0, 0, 0.9);
-}
-
-.navbar-nav .nav-link.active {
-    font-weight: 500;
-    color: #007bff;
-}
-
-.navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1);
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-/* Cabeçalho (Jumbotron/Hero) */
-.jumbotron,
-.hero {
-    padding: 3rem 2rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
-}
-
-.hero-primary {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.hero-secondary {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-.hero-success {
-    background-color: #5567cc;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-}
-
-.hero p.lead {
-    font-size: 1.25rem;
-}
-
-/* Botões */
-.btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    transition: all 0.15s ease-in-out;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-secondary:hover {
-    background-color: #545b62;
-    border-color: #4e555b;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-}
-
-.btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.btn-success:hover {
-    background-color: #1e7e34;
-    border-color: #1c7430;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-}
-
-.btn-outline-primary {
-    color: #007bff;
-    border-color: #007bff;
-    background-color: transparent;
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-}
-
-/* Cards */
-.card {
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    transition: box-shadow 0.15s ease-in-out;
-}
-
-.card:hover {
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-}
-
-.card-header {
-    background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 0.75rem 1.25rem;
-}
-
-.card-body {
-    padding: 1.25rem;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.card-text {
-    font-size: 1rem;
-    color: #495057;
-}
-
-/* Rodapé */
-.footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-    margin-top: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.footer p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    color: #adb5bd;
-}
-
-/*
- * Layout Específico (Opcional - Adapte conforme necessário)
- * -----------------------------------------------------
- */
-.container {
-    max-width: 1200px; /* Largura máxima comum para conteúdo */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * 15px);
-    margin-right: calc(-1 * 15px);
-    margin-left: calc(-1 * 15px);
-}
-
-.row > * {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-/* Colunas (Exemplo - você usará as classes col-md-* do Bootstrap) */
-/* .col-md-6 {
-    flex: 0 0 auto;
-    width: 50%;
-} */
-
-/* Espaçamento (Exemplos - use as classes mt-*, mb-*, pt-*, pb-*, etc. do Bootstrap) */
-/* .mt-3 {
-    margin-top: 1rem !important;
-} */
-
-/* Textos (Exemplos - use as classes text-*, font-weight-*, etc. do Bootstrap) */
-/* .text-center {
-    text-align: center !important;
-} */
-
-/* Imagens */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.rounded {
-    border-radius: 0.25rem !important;
-}
-
-/*
- * Componentes Personalizados (Se você tiver componentes específicos)
- * -------------------------------------------------------------
- */
-/* Exemplo: Barra lateral */
-.sidebar {
-    padding: 1rem;
-    background-color: #f1f3f5;
-    border-radius: 0.25rem;
-}
-
-.sidebar h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.sidebar ul li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.sidebar ul li:last-child {
-    border-bottom: none;
-}
-
-.sidebar a {
-    color: #212529;
-}
-
-.sidebar a:hover {
-    color: #007bff;
-}
-
-/* Exemplo: Seção de depoimentos */
-.testimonials {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.testimonial-card {
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: 0.25rem;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial-card p.quote {
-    font-style: italic;
-    color: #495057;
-}
-
-.testimonial-card p.author {
-    font-weight: bold;
-    color: #212529;
-    margin-top: 0.5rem;
-}
-
-/*
- * Responsividade (Adaptando para diferentes tamanhos de tela)
- * --------------------------------------------------------
- */
-/* Telas menores que 768px (smartphones) */
-@media (max-width: 767.98px) {
-    h1 {
-        font-size: 2rem;
+/* Animação para o brilho pulsante no ícone de energia */
+@keyframes pulse-icon-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Brilho inicial mais suave */
     }
-
-    h2 {
-        font-size: 1.75rem;
+    50% {
+        text-shadow: 0 0 15px rgba(255, 193, 7, 0.9); /* Brilho mais intenso */
     }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p.lead {
-        font-size: 1rem;
+    100% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Volta ao brilho inicial */
     }
 }
 
-/* Telas entre 768px e 991.98px (tablets) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    h1 {
-        font-size: 2.25rem;
+/* Aplica a animação ao ícone de raio dentro do card de energia */
+.card .card-body .card-title .bi-lightning-charge-fill {
+    animation: pulse-icon-glow 2s infinite alternate; /* Duração, repetição e direção */
+    display: inline-block; /* Garante que a sombra afete todo o ícone */
+}
+
+/* Animação para um breve "burst" de luz no hover do botão do card de energia */
+@keyframes energy-light-burst {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
     }
-
-    h2 {
-        font-size: 2rem;
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8; /* Opacidade máxima no meio do burst */
+    }
+    100% {
+        transform: scale(0.1) rotate(360deg);
+        opacity: 0;
     }
 }
 
-/* Telas maiores que 1200px (desktops grandes) */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1400px; /* Aumentando a largura máxima em telas grandes */
-    }
+/* Pseudo-elemento para o efeito de burst no botão de "Saiba mais" do card de energia */
+.card .btn-warning {
+    position: relative;
+    overflow: hidden; /* Esconde o excesso do pseudo-elemento */
 }
 
-/*
- * Utilitários (Classes helper adicionais, se necessário)
- * ---------------------------------------------------
- */
-.text-muted {
-    color: #6c757d !important;
+.card .btn-warning::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%); /* Gradiente circular para o efeito de luz */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Garante que não interfira com cliques */
+    transition: opacity 0.3s ease-in-out; /* Transição suave da opacidade */
 }
 
-.bg-light-custom {
-    background-color: #f8f9fa !important;
+.card .btn-warning:hover::before {
+    animation: energy-light-burst 1.5s ease-out; /* Ativa a animação no hover */
+    animation-iteration-count: 1; /* Roda apenas uma vez por hover */
+    opacity: 1; /* Torna visível no hover */
 }
-
-/* Adicione mais utilitários conforme a necessidade do seu projeto */

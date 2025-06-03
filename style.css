@@ -473,7 +473,69 @@ textarea.form-control {
     .carousel-control-prev,
     .carousel-control-next {
         width: 10%; /* Ajuste para celulares */
+    }/* style.css */
+
+/* --- Efeitos de Energia (Novas Adições) --- */
+
+/* Animação para o brilho pulsante no ícone de energia */
+@keyframes pulse-icon-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Brilho inicial mais suave */
     }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 193, 7, 0.9); /* Brilho mais intenso */
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Volta ao brilho inicial */
+    }
+}
+
+/* Aplica a animação ao ícone de raio dentro do card de energia */
+.card .card-body .card-title .bi-lightning-charge-fill {
+    animation: pulse-icon-glow 2s infinite alternate; /* Duração, repetição e direção */
+    display: inline-block; /* Garante que a sombra afete todo o ícone */
+}
+
+/* Animação para um breve "burst" de luz no hover do botão do card de energia */
+@keyframes energy-light-burst {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8; /* Opacidade máxima no meio do burst */
+    }
+    100% {
+        transform: scale(0.1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Pseudo-elemento para o efeito de burst no botão de "Saiba mais" do card de energia */
+.card .btn-warning {
+    position: relative;
+    overflow: hidden; /* Esconde o excesso do pseudo-elemento */
+}
+
+.card .btn-warning::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%); /* Gradiente circular para o efeito de luz */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Garante que não interfira com cliques */
+    transition: opacity 0.3s ease-in-out; /* Transição suave da opacidade */
+}
+
+.card .btn-warning:hover::before {
+    animation: energy-light-burst 1.5s ease-out; /* Ativa a animação no hover */
+    animation-iteration-count: 1; /* Roda apenas uma vez por hover */
+    opacity: 1; /* Torna visível no hover */
+}
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
         padding: 8px;
