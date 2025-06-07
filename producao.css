@@ -1,227 +1,591 @@
-/* Estilos específicos para a página de Produção */
-
-/* Seção de Destaque Inicial */
-.production-hero {
-    background-color: #f0fff0; /* Verde bem claro */
-    padding: 4rem 2rem;
-    text-align: center;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
+/* --- Estilos Globais e Reset --- */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    line-height: 1.7;
+    color: #495057; /* Tom de cinza mais suave para o texto */
+    background-color: #f4f6f8; /* Fundo levemente texturizado */
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte em navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Melhora a renderização da fonte no Firefox */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column; /* Permite que o rodapé "empurre" para baixo */
 }
 
-.production-hero h2 {
-    color: #28a745; /* Verde principal */
-    font-size: 2.75rem;
-    margin-bottom: 1rem;
+/* --- Cabeçalho (Header) --- */
+/* Não modificado conforme sua solicitação */
+.bg-success { /* Usando a classe do Bootstrap para o cabeçalho */
+    background-color: #491c74 !important; /* Cor verde do Bootstrap success */
 }
 
-.production-hero p {
-    font-size: 1.1rem;
-    color: #495057;
-    margin-bottom: 1.5rem;
+.text-white { /* Garante que o texto seja branco onde a classe é aplicada */
+    color: #fff !important;
 }
 
-/* Seção de Visão Geral da Produção */
-.production-overview {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+header h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.05em;
 }
 
-.production-overview h3 {
-    color: #28a745;
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    text-align: left; /* Alinhamento à esquerda para esta seção */
+header .lead { /* Para o parágrafo com a classe 'lead' dentro do cabeçalho */
+    color:#c4c4c4;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
-.production-overview .lead {
+/* --- Barra de Navegação (Navbar) --- */
+.navbar {
+    background-color: #ffffff; /* Fundo branco para a navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07); /* Sombra um pouco mais pronunciada e nítida */
+    padding-top: 0.5rem; /* Ajuste sutil no padding para consistência */
+    padding-bottom: 0.5rem; /* Ajuste sutil no padding para consistência */
+}
+
+.navbar-brand {
+    font-weight: 700; /* Mais negrito para o brand */
+    font-size: 1.3rem; /* Levemente maior */
+    color: #343a40 !important; /* Cor mais escura para o brand */
+}
+
+.navbar-nav .nav-link {
+    color: #495057 !important; /* Cor mais suave para os links */
+    padding: 0.8rem 1.1rem; /* Mais espaçamento interno nos links */
+    transition: all 0.3s ease-in-out; /* Transição para todas as propriedades */
+    border-radius: 4px; /* Pequenas bordas arredondadas nos links */
+    position: relative; /* Para o efeito de sublinhado */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important; /* Cor azul no hover */
+    background-color: transparent; /* Remove background no hover, optando por underline */
+}
+
+/* Efeito de sublinhado animado no hover e ativo */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 2.2rem); /* Ajusta a largura para o padding */
+    height: 2px;
+    background-color: #007bff;
+    bottom: 0.2rem;
+    left: 1.1rem; /* Alinha com o padding */
+    transform: scaleX(0); /* Esconde o sublinhado por padrão */
+    transition: transform 0.3s ease-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1); /* Mostra o sublinhado no hover e para o link ativo */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600; /* Um pouco mais de peso */
+    color: #007bff !important; /* Cor azul para o link ativo */
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adicionado uma borda sutil ao toggler */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 0.35rem 0.65rem; /* Ajuste no padding */
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Sombra de foco azul */
+}
+
+.navbar-toggler-icon {
+    filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%); /* Ícone mais escuro */
+}
+
+/* --- Conteúdo Principal (Main) --- */
+main.container {
+    padding: 40px; /* Aumento do padding */
+    background-color: #fff;
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra um pouco mais forte */
+    margin-top: 2rem; /* Adicionado um espaçamento superior */
+    margin-bottom: 2rem; /* Adicionado um espaçamento inferior */
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+}
+
+section {
+    padding-bottom: 3rem; /* Mais espaçamento entre as seções */
+    border-bottom: 1px solid #e0e0e0; /* Cor do separador mais clara */
+    margin-bottom: 3rem; /* Espaçamento abaixo da linha divisória */
+}
+
+section:last-child {
+    border-bottom: none;
+    padding-bottom: 0; /* Remove padding da última seção */
+    margin-bottom: 0; /* Remove margin da última seção */
+}
+
+h2 {
+    font-size: 2.5rem; /* Aumento do tamanho da fonte */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
+    margin-bottom: 1.75rem; /* Mais espaçamento abaixo */
+    position: relative; /* Para o efeito de sublinhado */
+    padding-bottom: 0.5rem; /* Espaço para o sublinhado */
+}
+
+h3 {
+    font-size: 2rem; /* Aumento do tamanho da fonte */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
+    margin-bottom: 1.5rem; /* Mais espaçamento abaixo */
+    text-align: left; /* Alinhamento à esquerda para consistência */
+    font-weight: 500; /* Um pouco mais de peso */
+}
+
+p {
+    line-height: 1.9; /* Maior espaçamento entre linhas para melhor legibilidade */
+    margin-bottom: 1.2rem; /* Mais espaçamento entre parágrafos */
+    font-size: 1.05rem; /* Levemente maior */
+    color: #5a6268; /* Tom de cinza um pouco mais escuro */
+}
+
+.text-end {
+    text-align: right;
     font-style: italic;
     color: #6c757d;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem; /* Adicionado espaçamento superior */
+    padding-top: 0.5rem; /* Adicionado padding superior */
+    border-top: 1px dashed #e9ecef; /* Linha tracejada para separar */
 }
 
-.production-overview ul {
-    list-style: none;
-    padding-left: 0;
+/* --- Imagens --- */
+.img-fluids {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out; /* Adicionado transição para hover */
 }
 
-.production-overview ul li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #e9ecef;
+/* --- Imagens --- */
+.img-fluids {
+    margin-top: 100px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out; /* Adicionado transição para hover */
 }
 
-.production-overview ul li:last-child {
-    border-bottom: none;
+.img-fluids:hover {
+    transform: scale(1.02); /* Leve zoom no hover */
 }
 
-.production-overview ul li i {
-    color: #28a745;
-    margin-right: 0.75rem;
+.img-fluid {
+    margin-top: 150px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out; /* Adicionado transição para hover */
 }
 
-/* Seção de Etapas da Produção (Cards) */
-.production-steps {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+.img-fluid:hover {
+    transform: scale(1.02); /* Leve zoom no hover */
 }
 
-.production-steps h3 {
-    color: #28a745;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center; /* Centralizando o título */
+
+/* --- Cards --- */
+.card {
+    border: 1px solid #e9ecef; /* Adicionada uma borda sutil */
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição para box-shadow também */
+    overflow: hidden; /* Garante que a borda arredondada da imagem se ajuste */
 }
 
-.production-steps .card {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-    border-radius: 0.5rem;
-    transition: transform 0.2s ease-in-out;
+.card:hover {
+    transform: translateY(-8px); /* Eleva mais o card no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
 }
 
-.production-steps .card:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-}
-
-.production-steps .card-body {
-    padding: 1.25rem;
-    text-align: center;
-}
-
-.production-steps .card-title {
-    font-size: 1.5rem;
-    color: #343a40;
-    margin-bottom: 0.75rem;
-}
-
-.production-steps .card-text {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-.production-steps .icon-step {
-    font-size: 3rem;
-    color: #28a745;
-    margin-bottom: 1rem;
-}
-
-/* Seção de Industrialização */
-.industrialization-section {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
-    background-color: #e9ecef; /* Fundo cinza claro para destacar */
-    border-radius: 0.5rem;
-    padding: 3rem 2rem;
-}
-
-.industrialization-section h3 {
-    color: #007bff; /* Azul para industrialização */
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.industrialization-section p {
-    font-size: 1.05rem;
-    color: #495057;
-    line-height: 1.8;
-}
-
-.industrialization-section .btn-primary {
-    margin-top: 1rem;
-}
-
-/* Seção de Sustentabilidade na Produção */
-.sustainability-section {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
-}
-
-.sustainability-section h3 {
-    color: #198754; /* Verde mais escuro para sustentabilidade */
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: right; /* Alinhamento à direita */
-}
-
-.sustainability-section p {
-    font-size: 1.05rem;
-    color: #495057;
-    line-height: 1.8;
-    text-align: right;
-}
-
-.sustainability-section .btn-success {
-    margin-top: 1rem;
-}
-
-/* Galeria de Produtos (Opcional) */
-.product-gallery {
-    padding: 2rem 0;
-    margin-bottom: 2rem;
-}
-
-.product-gallery h3 {
-    color: #28a745;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.product-gallery .row {
-    margin-top: 1rem;
-}
-
-.product-gallery .col-md-4 {
-    margin-bottom: 1.5rem;
-}
-
-.product-gallery .card {
-    border: none;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-    border-radius: 0.5rem;
-}
-
-.product-gallery .card-img-top {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    height: 180px;
+.card-img-top {
+    border-top-left-radius: 10px; /* Ajuste para bordas do card */
+    border-top-right-radius: 10px; /* Ajuste para bordas do card */
     object-fit: cover;
+    height: 250px; /* Aumento da altura fixa para mais impacto visual */
+    transition: transform 0.3s ease-in-out; /* Adicionado transição para zoom na imagem */
 }
 
-.product-gallery .card-body {
-    padding: 1rem;
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Zoom sutil na imagem do card no hover */
+}
+
+.card-body {
+    padding: 1.75rem; /* Mais padding */
+}
+
+.card-title {
+    font-size: 1.35rem; /* Levemente maior */
+    color: #212529; /* Cor mais escura */
+    margin-bottom: 0.85rem;
+    font-weight: 600; /* Mais negrito */
+}
+
+.card-text {
+    font-size: 1rem; /* Levemente maior */
+    color: #6c757d;
+    margin-bottom: 1.2rem; /* Mais espaçamento */
+}
+/* ... (Mantenha todos os estilos anteriores) ... */
+
+/* Estilos Específicos para os Novos Cards de Etapas */
+section .card.h-100 {
+    border-radius: 15px; /* Bordas mais arredondadas para um visual suave */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra mais profunda para destacar */
+    transition: all 0.4s ease-in-out; /* Transição mais suave e longa */
+    overflow: hidden; /* Garante que nada 'escape' do card */
+    position: relative; /* Para o efeito de hover do fundo */
+    background-color: #ffffff;
+    z-index: 1; /* Garante que o card esteja acima de pseudo-elementos */
+}
+
+section .card.h-100:hover {
+    transform: translateY(-15px) scale(1.02); /* Elevação e leve zoom no hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Sombra ainda mais intensa no hover */
+    z-index: 2; /* Garante que o card em hover esteja acima dos outros */
+}
+
+/* Efeito de brilho de fundo no hover do card */
+section .card.h-100::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.0) 50%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 15px;
+    z-index: -1; /* Fica por trás do conteúdo */
+}
+
+section .card.h-100:hover::before {
+    opacity: 1;
+}
+
+.card-body .d-flex.align-items-center .display-5 {
+    font-size: 3.5rem !important; /* Ícones um pouco menores para harmonia */
+    line-height: 1; /* Alinha melhor o ícone */
+}
+
+/* Cores dos Ícones para os Novos Cards */
+.card-body .d-flex.align-items-center .bi-tree-fill {
+    color: #347c3e !important; /* Verde da Produção */
+    text-shadow: 0 0 10px rgba(52, 124, 62, 0.4);
+}
+
+.card-body .d-flex.align-items-center .bi-truck {
+    color: #007bff !important; /* Azul Padrão */
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+.card-body .d-flex.align-items-center .bi-gear-fill {
+    color: #f39c12 !important; /* Laranja/Dourado */
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.4);
+}
+
+.card-body .d-flex.align-items-center .bi-shop {
+    color: #dc3545 !important; /* Vermelho Bootstrap para perigo/destaque */
+    text-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
+}
+
+
+.card-body .card-title {
+    font-size: 1.4rem; /* Ajuste no tamanho do título do card */
+    font-weight: 700;
+    color: #212529;
+}
+
+.card-body .text-muted {
+    font-size: 0.9rem;
+    color: #6c757d !important;
+}
+
+/* Título central da seção */
+h2.text-center {
+    font-size: 2.8rem; /* Um pouco maior para o título central */
+    color: #212529;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* ... (Mantenha todos os estilos responsivos anteriores) ... */
+
+.btn-secondary {
+    background-color: #2e1042;
+    color: white;
+    padding: 0.7rem 1.4rem; /* Mais padding */
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-weight: 600; /* Mais negrito */
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    text-transform: uppercase; /* Texto em maiúsculas para botões */
+    letter-spacing: 0.05em; /* Leve espaçamento entre letras */
+}
+
+.btn { /* Adicionado para o botão do card de energia */
+    background-color: #732188;
+    border-color: #4e1b63;
+    color: #fff;
+}
+
+/* --- Rodapé (Footer) --- */
+.footer {
+    background-color: #212529; /* Preto mais escuro para o rodapé */
+    color: #fff;
     text-align: center;
+    padding: 40px; /* Mais padding */
+    margin-top: auto; /* Garante que o rodapé fique no final da página */
+    border-radius: 10px 10px 0 0; /* Bordas mais arredondadas na parte superior */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada na parte superior */
 }
 
-.product-gallery .card-title {
-    font-size: 1.1rem;
-    color: #343a40;
-    margin-bottom: 0.5rem;
+.footer p {
+    margin-bottom: 0;
+    font-size: 0.95rem; /* Levemente maior */
+    color: #c4c4c4; /* Tom de cinza mais claro e suave */
+    line-height: 1.6;
 }
 
-/* Estilos Responsivos (Pequenas alterações para telas menores) */
+/* --- Estilos para o Formulário de Contato --- */
+/* Os inputs e textareas já são estilizados por .form-control do Bootstrap,
+   mas podemos adicionar alguns toques extras */
+.form-label {
+    font-weight: 600; /* Deixa os rótulos mais visíveis */
+    color: #343a40; /* Cor mais escura para o texto do rótulo */
+    margin-bottom: 0.5rem; /* Pequeno espaçamento abaixo do rótulo */
+}
+
+.form-control {
+    border-radius: 8px; /* Bordas mais arredondadas para os inputs */
+    padding: 0.8rem 1rem; /* Mais padding interno */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    border: 1px solid #ced4da; /* Borda padrão */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff; /* Cor da borda ao focar (azul Bootstrap) */
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Sombra ao focar */
+    outline: 0; /* Remove o outline padrão */
+}
+
+textarea.form-control {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.d-grid .btn-lg { /* Estilo para o botão de envio no formulário de contato */
+    font-size: 1.25rem; /* Torna o botão de envio maior */
+    padding: 0.8rem 1.5rem; /* Ajusta o padding */
+}
+
+/* Estilos para "Outras Formas de Contato" */
+.mt-5.text-center h4 {
+    color: #212529; /* Cor do texto do título */
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.mt-5.text-center h4::after { /* Sublinhado sutil para o título de contato */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Largura fixa */
+    height: 3px;
+    background-color: #28a745; /* Cor verde do sucesso */
+    border-radius: 2px;
+}
+
+.mt-5.text-center p {
+    margin-bottom: 0.8rem; /* Espaçamento entre as linhas de contato */
+    font-size: 1.1rem; /* Levemente maior */
+    color: #5a6268;
+}
+
+.mt-5.text-center p i {
+    font-size: 1.3rem; /* Tamanho dos ícones de contato */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
+}
+
+/* --- Estilos Responsivos --- */
+@media (max-width: 992px) { /* Adicionado um breakpoint para tablets */
+    .navbar-nav .nav-link {
+        padding: 0.6rem 0.8rem;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 8%; /* Ajuste para tablets */
+    }
+}
+
 @media (max-width: 768px) {
-    .production-hero h2 {
-        font-size: 2.2rem;
+    /* Cabeçalho */
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header .lead {
+        font-size: 1.2rem;
     }
 
-    .production-hero p {
+    /* Main Container */
+    main.container {
+        padding: 20px; /* Redução do padding em telas menores */
+    }
+
+    /* Seções e Títulos */
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Imagens */
+    .img-fluid {
+        border-radius: 6px;
+    }
+
+    /* Cards */
+    .card {
+        margin-bottom: 1.5rem; /* Espaçamento entre cards em telas menores */
+    }
+    .card-img-top {
+        height: 180px; /* Ajuste da altura em telas menores */
+    }
+
+    /* Botões */
+    .btn-primary,
+    .btn-outline-success,
+    .btn-warning,
+    .btn-success { /* Incluído os novos botões */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Carrossel */
+    .img-slide {
+        max-height: 350px; /* Mais redução na altura do carrossel */
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%; /* Ajuste para celulares */
+    }/* style.css */
+
+/* --- Efeitos de Energia (Novas Adições) --- */
+
+/* Animação para o brilho pulsante no ícone de energia */
+@keyframes pulse-icon-glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Brilho inicial mais suave */
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 193, 7, 0.9); /* Brilho mais intenso */
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Volta ao brilho inicial */
+    }
+}
+
+/* Aplica a animação ao ícone de raio dentro do card de energia */
+.card .card-body .card-title .bi-lightning-charge-fill {
+    animation: pulse-icon-glow 2s infinite alternate; /* Duração, repetição e direção */
+    display: inline-block; /* Garante que a sombra afete todo o ícone */
+}
+
+/* Animação para um breve "burst" de luz no hover do botão do card de energia */
+@keyframes energy-light-burst {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8; /* Opacidade máxima no meio do burst */
+    }
+    100% {
+        transform: scale(0.1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Pseudo-elemento para o efeito de burst no botão de "Saiba mais" do card de energia */
+.card .btn-warning {
+    position: relative;
+    overflow: hidden; /* Esconde o excesso do pseudo-elemento */
+}
+
+.card .btn-warning::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%); /* Gradiente circular para o efeito de luz */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Garante que não interfira com cliques */
+    transition: opacity 0.3s ease-in-out; /* Transição suave da opacidade */
+}
+
+.card .btn-warning:hover::before {
+    animation: energy-light-burst 1.5s ease-out; /* Ativa a animação no hover */
+    animation-iteration-count: 1; /* Roda apenas uma vez por hover */
+    opacity: 1; /* Torna visível no hover */
+}
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 8px;
+    }
+
+    /* Formulário de Contato (ajustes para mobile) */
+    .d-grid .btn-lg {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.2rem;
+    }
+    .mt-5.text-center h4::after {
+        width: 60px; /* Reduz o sublinhado em mobile */
+    }
+
+    /* Rodapé */
+    .footer {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) { /* Breakpoint para celulares pequenos */
+    header h1 {
+        font-size: 2rem;
+    }
+    header .lead {
         font-size: 1rem;
     }
-
-    .production-overview h3,
-    .production-steps h3,
-    .industrialization-section h3,
-    .sustainability-section h3,
-    .product-gallery h3 {
-        font-size: 1.75rem;
-        text-align: center; /* Centraliza títulos em telas menores */
+    h2 {
+        font-size: 1.8rem;
     }
-
-    .sustainability-section h3,
-    .sustainability-section p {
-        text-align: center; /* Centraliza conteúdo de sustentabilidade em telas menores */
+    h3 {
+        font-size: 1.4rem;
+    }
+    .card-title {
+        font-size: 1.15rem;
+    }
+    .img-slide {
+        max-height: 250px;
     }
 }

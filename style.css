@@ -14,9 +14,8 @@ body {
 }
 
 /* --- Cabeçalho (Header) --- */
-/* Não modificado conforme sua solicitação */
 .bg-success { /* Usando a classe do Bootstrap para o cabeçalho */
-    background-color: #28a745 !important; /* Cor verde do Bootstrap success */
+    background-color: #491c74 !important; /* Cor verde do Bootstrap success */
 }
 
 .text-white { /* Garante que o texto seja branco onde a classe é aplicada */
@@ -24,12 +23,14 @@ body {
 }
 
 header h1 {
+    color: white;
     font-size: 3rem;
     margin-bottom: 0.75rem;
     letter-spacing: -0.05em;
 }
 
 header .lead { /* Para o parágrafo com a classe 'lead' dentro do cabeçalho */
+    color:#c4c4c4;
     font-size: 1.5rem;
     font-weight: 300;
 }
@@ -123,27 +124,15 @@ section:last-child {
 
 h2 {
     font-size: 2.5rem; /* Aumento do tamanho da fonte */
-    color: #212529; /* Cor mais escura para o título principal da seção */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
     margin-bottom: 1.75rem; /* Mais espaçamento abaixo */
     position: relative; /* Para o efeito de sublinhado */
     padding-bottom: 0.5rem; /* Espaço para o sublinhado */
 }
 
-/* Sublinhado sutil para H2 */
-h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60px; /* Largura fixa para o sublinhado */
-    height: 4px; /* Espessura do sublinhado */
-    background-color: #007bff; /* Cor do sublinhado */
-    border-radius: 2px;
-}
-
 h3 {
     font-size: 2rem; /* Aumento do tamanho da fonte */
-    color: #007bff; /* Azul para títulos secundários */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
     margin-bottom: 1.5rem; /* Mais espaçamento abaixo */
     text-align: left; /* Alinhamento à esquerda para consistência */
     font-weight: 500; /* Um pouco mais de peso */
@@ -154,15 +143,6 @@ p {
     margin-bottom: 1.2rem; /* Mais espaçamento entre parágrafos */
     font-size: 1.05rem; /* Levemente maior */
     color: #5a6268; /* Tom de cinza um pouco mais escuro */
-}
-
-.text-end {
-    text-align: right;
-    font-style: italic;
-    color: #6c757d;
-    margin-top: 1.5rem; /* Adicionado espaçamento superior */
-    padding-top: 0.5rem; /* Adicionado padding superior */
-    border-top: 1px dashed #e9ecef; /* Linha tracejada para separar */
 }
 
 /* --- Imagens --- */
@@ -221,9 +201,26 @@ p {
     margin-bottom: 1.2rem; /* Mais espaçamento */
 }
 
-/* --- Botões --- */
-.btn-primary,
-.btn-outline-success {
+.btn-secondary { /* Estilo para os botões dos cards de solução */
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(108, 117, 125, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    background-color: #2e1042;
+    color: white;
     padding: 0.7rem 1.4rem; /* Mais padding */
     border-radius: 8px; /* Bordas mais arredondadas */
     font-weight: 600; /* Mais negrito */
@@ -233,99 +230,15 @@ p {
     letter-spacing: 0.05em; /* Leve espaçamento entre letras */
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
-    transform: translateY(-2px); /* Leve elevação no hover */
-}
-
-.btn-warning { /* Adicionado para o botão do card de energia */
-    background-color: #ffc107;
-    border-color: #ffc107;
-    color: #212529; /* Cor do texto para contraste */
-}
-
-.btn-warning:hover {
-    background-color: #e0a800;
-    border-color: #e0a800;
-    color: #212529;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-.btn-success { /* Adicionado para o botão do card de produção e contato */
-    background-color: #28a745;
-    border-color: #28a745;
+.btn { /* Adicionado para o botão do card de produção e contato */
+    background-color: #732188;
+    border-color: #4e1b63;
     color: #fff;
 }
 
-.btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-    color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+.botao {
+    margin-left: 110px;
 }
-
-.btn-outline-success {
-    color: #28a745;
-    border-color: #28a745;
-    background-color: transparent; /* Garante que o fundo seja transparente */
-}
-
-.btn-outline-success:hover {
-    background-color: #28a745;
-    color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
-    transform: translateY(-2px); /* Leve elevação no hover */
-}
-
-/* --- Carrossel --- */
-.carousel {
-    border-radius: 10px; /* Bordas mais arredondadas */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
-    overflow: hidden;
-    margin-bottom: 2.5rem; /* Adicionado um espaçamento abaixo do carrossel */
-}
-
-.carousel-inner {
-    border-radius: 10px;
-}
-
-.img-slide {
-    max-height: 600px; /* Aumento da altura máxima */
-    object-fit: cover;
-    width: 100%; /* Garante que a imagem preencha a largura */
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    background: rgba(0, 0, 0, 0.4); /* Fundo um pouco mais escuro e opaco */
-    opacity: 0.9; /* Opacidade um pouco maior */
-    transition: opacity 0.3s ease, background 0.3s ease; /* Transição para o background também */
-    width: 6%; /* Largura ligeiramente maior */
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.6); /* Fundo ainda mais escuro no hover */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(255, 255, 255, 0.85); /* Ícones mais opacos */
-    border-radius: 50%;
-    padding: 12px; /* Mais padding para o ícone */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil nos ícones */
-}
-
 /* --- Rodapé (Footer) --- */
 .footer {
     background-color: #212529; /* Preto mais escuro para o rodapé */
@@ -344,78 +257,10 @@ p {
     line-height: 1.6;
 }
 
-/* --- Estilos para o Formulário de Contato --- */
-/* Os inputs e textareas já são estilizados por .form-control do Bootstrap,
-   mas podemos adicionar alguns toques extras */
-.form-label {
-    font-weight: 600; /* Deixa os rótulos mais visíveis */
-    color: #343a40; /* Cor mais escura para o texto do rótulo */
-    margin-bottom: 0.5rem; /* Pequeno espaçamento abaixo do rótulo */
-}
-
-.form-control {
-    border-radius: 8px; /* Bordas mais arredondadas para os inputs */
-    padding: 0.8rem 1rem; /* Mais padding interno */
-    font-size: 1rem; /* Tamanho de fonte padrão */
-    border: 1px solid #ced4da; /* Borda padrão */
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.form-control:focus {
-    border-color: #80bdff; /* Cor da borda ao focar (azul Bootstrap) */
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Sombra ao focar */
-    outline: 0; /* Remove o outline padrão */
-}
-
-textarea.form-control {
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
-}
-
-.d-grid .btn-lg { /* Estilo para o botão de envio no formulário de contato */
-    font-size: 1.25rem; /* Torna o botão de envio maior */
-    padding: 0.8rem 1.5rem; /* Ajusta o padding */
-}
-
-/* Estilos para "Outras Formas de Contato" */
-.mt-5.text-center h4 {
-    color: #212529; /* Cor do texto do título */
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.mt-5.text-center h4::after { /* Sublinhado sutil para o título de contato */
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 80px; /* Largura fixa */
-    height: 3px;
-    background-color: #28a745; /* Cor verde do sucesso */
-    border-radius: 2px;
-}
-
-.mt-5.text-center p {
-    margin-bottom: 0.8rem; /* Espaçamento entre as linhas de contato */
-    font-size: 1.1rem; /* Levemente maior */
-    color: #5a6268;
-}
-
-.mt-5.text-center p i {
-    font-size: 1.3rem; /* Tamanho dos ícones de contato */
-    vertical-align: middle; /* Alinha o ícone com o texto */
-    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
-}
-
 /* --- Estilos Responsivos --- */
 @media (max-width: 992px) { /* Adicionado um breakpoint para tablets */
     .navbar-nav .nav-link {
         padding: 0.6rem 0.8rem;
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 8%; /* Ajuste para tablets */
     }
 }
 
@@ -458,96 +303,10 @@ textarea.form-control {
     }
 
     /* Botões */
-    .btn-primary,
-    .btn-outline-success,
-    .btn-warning,
-    .btn-success { /* Incluído os novos botões */
+    .btn-secondary,
+    .btn-outline-dark {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
-    }
-
-    /* Carrossel */
-    .img-slide {
-        max-height: 350px; /* Mais redução na altura do carrossel */
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 10%; /* Ajuste para celulares */
-    }/* style.css */
-
-/* --- Efeitos de Energia (Novas Adições) --- */
-
-/* Animação para o brilho pulsante no ícone de energia */
-@keyframes pulse-icon-glow {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Brilho inicial mais suave */
-    }
-    50% {
-        text-shadow: 0 0 15px rgba(255, 193, 7, 0.9); /* Brilho mais intenso */
-    }
-    100% {
-        text-shadow: 0 0 5px rgba(255, 193, 7, 0.4); /* Volta ao brilho inicial */
-    }
-}
-
-/* Aplica a animação ao ícone de raio dentro do card de energia */
-.card .card-body .card-title .bi-lightning-charge-fill {
-    animation: pulse-icon-glow 2s infinite alternate; /* Duração, repetição e direção */
-    display: inline-block; /* Garante que a sombra afete todo o ícone */
-}
-
-/* Animação para um breve "burst" de luz no hover do botão do card de energia */
-@keyframes energy-light-burst {
-    0% {
-        transform: scale(0.1) rotate(0deg);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2) rotate(180deg);
-        opacity: 0.8; /* Opacidade máxima no meio do burst */
-    }
-    100% {
-        transform: scale(0.1) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Pseudo-elemento para o efeito de burst no botão de "Saiba mais" do card de energia */
-.card .btn-warning {
-    position: relative;
-    overflow: hidden; /* Esconde o excesso do pseudo-elemento */
-}
-
-.card .btn-warning::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%); /* Gradiente circular para o efeito de luz */
-    opacity: 0; /* Começa invisível */
-    pointer-events: none; /* Garante que não interfira com cliques */
-    transition: opacity 0.3s ease-in-out; /* Transição suave da opacidade */
-}
-
-.card .btn-warning:hover::before {
-    animation: energy-light-burst 1.5s ease-out; /* Ativa a animação no hover */
-    animation-iteration-count: 1; /* Roda apenas uma vez por hover */
-    opacity: 1; /* Torna visível no hover */
-}
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        padding: 8px;
-    }
-
-    /* Formulário de Contato (ajustes para mobile) */
-    .d-grid .btn-lg {
-        font-size: 1.1rem;
-        padding: 0.7rem 1.2rem;
-    }
-    .mt-5.text-center h4::after {
-        width: 60px; /* Reduz o sublinhado em mobile */
     }
 
     /* Rodapé */
@@ -571,8 +330,5 @@ textarea.form-control {
     }
     .card-title {
         font-size: 1.15rem;
-    }
-    .img-slide {
-        max-height: 250px;
     }
 }

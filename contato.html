@@ -7,7 +7,7 @@
     <title>Contato - AGRINHO 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="contato.css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -53,9 +53,9 @@
         <section class="row justify-content-center">
             <div class="col-lg-8">
                 <h2 class="text-center mb-4">Entre em Contato Conosco</h2>
-                <p class="text-center lead mb-5">Tem alguma dúvida, sugestão ou gostaria de mais informações sobre o AGRINHO 2025? Preencha o formulário abaixo e entraremos em contato!</p>
+                <p class="text-center lead mb-5">Tem alguma dúvida, sugestão ou gostaria de mais informações? Preencha o formulário abaixo e entraremos em contato!</p>
 
-                <form action="#" method="POST"> <div class="mb-3">
+                <form id="contactForm"> <div class="mb-3">
                         <label for="nome" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" name="nome" required>
                     </div>
@@ -72,32 +72,62 @@
                         <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
                     </div>
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success btn-lg"><i class="bi bi-send-fill me-2"></i>Enviar Mensagem</button>
+                        <button type="button" class="btn btn-secondary btn-lg" id="enviarMensagemBtn">
+                            <i class="bi bi-send-fill me-2"></i>Enviar Mensagem
+                        </button>
                     </div>
                 </form>
 
                 <div class="mt-5 text-center">
                     <h4>Outras Formas de Contato:</h4>
-                    <p><i class="bi bi-telephone-fill me-2 text-success"></i>Telefone: (XX) XXXX-XXXX</p>
-                    <p><i class="bi bi-whatsapp me-2 text-success"></i>WhatsApp: (XX) 9XXXX-XXXX</p>
-                    <p><i class="bi bi-geo-alt-fill me-2 text-success"></i>Endereço: Rua do Agrinho, 123 - Campo Alegre, Cidade - UF</p>
+                    <p><i class="bi bi-telephone-fill me-2 text-secondary"></i>Telefone: (42) 90897-5078</p>
+                    <p><i class="bi bi-whatsapp me-2 text-secondary"></i>WhatsApp: (42) 98764-8970</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 AGRINHO. Todos os direitos reservados.</p>
-            <p>Siga-nos nas redes sociais:</p>
-            <a href="#" class="text-white mx-2"><i class="bi bi-facebook fs-4"></i></a>
-            <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a>
-            <a href="#" class="text-white mx-2"><i class="bi bi-instagram fs-4"></i></a>
+    <footer class="bg-dark text-center mt-5">
+        <div class="container">
+            <p class="text-white pt-4">2025 Agrinho - Festejando a Conexão Campo Cidade. Todos os direitos reservados.</p>
+            <p class="text-white">Desenvolvido com <i class="bi bi-heart-fill text-danger"></i> por um entusiasta do Agrinho</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-xrR7W0p0m0hFjS0p4v0Xj6Zt"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Adiciona um "ouvinte de evento" ao botão de enviar mensagem
+        document.getElementById('enviarMensagemBtn').addEventListener('click', function() {
+            // Pega os valores dos campos do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Validação simples para campos obrigatórios
+            if (!nome || !email || !mensagem) {
+                alert('Por favor, preencha todos os campos obrigatórios (Nome, E-mail, Mensagem).');
+                return; // Impede que o e-mail seja aberto se houver campos vazios
+            }
+
+            // Define o e-mail de destino (substitua pelo seu e-mail real)
+            const recipient = 'maria.nava@escola.pr.gov.br'; // <<<<<<< IMPORTANTE: ALtere para o seu email de destino
+
+            // Codifica o assunto e o corpo da mensagem para garantir que caracteres especiais funcionem na URL
+            const emailSubject = encodeURIComponent(`Contato AGRINHO: ${assunto ? assunto : 'Sem Assunto'}`);
+            const emailBody = encodeURIComponent(
+                `Nome: ${nome}\n` +
+                `Email: ${email}\n\n` +
+                `Mensagem:\n${mensagem}`
+            );
+
+            // Constrói a URL mailto: e redireciona o navegador
+            window.location.href = `mailto:${recipient}?subject=${emailSubject}&body=${emailBody}`;
+        });
+    </script>
 </body>
 
 </html>

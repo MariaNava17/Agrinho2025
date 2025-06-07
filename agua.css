@@ -1,104 +1,331 @@
-/* style.css */
-
-/* Estilos específicos para a página de água */
-body.agua-page {
-    background-color: #e0f7fa; /* Um tom de azul claro para remeter à água */
+/* --- Estilos Globais e Reset --- */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    line-height: 1.7;
+    color: #495057; /* Tom de cinza mais suave para o texto */
+    background-color: #f4f6f8; /* Fundo levemente texturizado */
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte em navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Melhora a renderização da fonte no Firefox */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column; /* Permite que o rodapé "empurre" para baixo */
 }
 
-.cabecalho {
-    background-color: #03a9f4; /* Azul mais intenso para o cabeçalho */
+/* --- Cabeçalho (Header) --- */
+.bg-success { /* Usando a classe do Bootstrap para o cabeçalho */
+    background-color: #491c74 !important; /* Cor verde do Bootstrap success */
+}
+
+.text-white { /* Garante que o texto seja branco onde a classe é aplicada */
+    color: #fff !important;
+}
+
+header h1 {
     color: white;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.05em;
 }
 
-.navbar-success {
-    background-color: #4dd0e1 !important; /* Um tom de azul mais claro para a navegação */
+header .lead { /* Para o parágrafo com a classe 'lead' dentro do cabeçalho */
+    color:#c4c4c4;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
-.nav-link.text-white:hover {
-    color: #0277bd !important; /* Azul mais escuro no hover */
+/* --- Barra de Navegação (Navbar) --- */
+.navbar {
+    background-color: #ffffff; /* Fundo branco para a navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07); /* Sombra um pouco mais pronunciada e nítida */
+    padding-top: 0.5rem; /* Ajuste sutil no padding para consistência */
+    padding-bottom: 0.5rem; /* Ajuste sutil no padding para consistência */
 }
 
-.container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.navbar-brand {
+    font-weight: 700; /* Mais negrito para o brand */
+    font-size: 1.3rem; /* Levemente maior */
+    color: #343a40 !important; /* Cor mais escura para o brand */
+}
+
+.navbar-nav .nav-link {
+    color: #495057 !important; /* Cor mais suave para os links */
+    padding: 0.8rem 1.1rem; /* Mais espaçamento interno nos links */
+    transition: all 0.3s ease-in-out; /* Transição para todas as propriedades */
+    border-radius: 4px; /* Pequenas bordas arredondadas nos links */
+    position: relative; /* Para o efeito de sublinhado */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important; /* Cor azul no hover */
+    background-color: transparent; /* Remove background no hover, optando por underline */
+}
+
+/* Efeito de sublinhado animado no hover e ativo */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 2.2rem); /* Ajusta a largura para o padding */
+    height: 2px;
+    background-color: #007bff;
+    bottom: 0.2rem;
+    left: 1.1rem; /* Alinha com o padding */
+    transform: scaleX(0); /* Esconde o sublinhado por padrão */
+    transition: transform 0.3s ease-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1); /* Mostra o sublinhado no hover e para o link ativo */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600; /* Um pouco mais de peso */
+    color: #007bff !important; /* Cor azul para o link ativo */
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Adicionado uma borda sutil ao toggler */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 0.35rem 0.65rem; /* Ajuste no padding */
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Sombra de foco azul */
+}
+
+.navbar-toggler-icon {
+    filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%); /* Ícone mais escuro */
+}
+
+/* --- Conteúdo Principal (Main) --- */
+main.container {
+    padding: 40px; /* Aumento do padding */
+    background-color: #fff;
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra um pouco mais forte */
+    margin-top: 2rem; /* Adicionado um espaçamento superior */
+    margin-bottom: 2rem; /* Adicionado um espaçamento inferior */
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+}
+
+section {
+    padding-bottom: 3rem; /* Mais espaçamento entre as seções */
+    border-bottom: 1px solid #e0e0e0; /* Cor do separador mais clara */
+    margin-bottom: 3rem; /* Espaçamento abaixo da linha divisória */
+}
+
+section:last-child {
+    border-bottom: none;
+    padding-bottom: 0; /* Remove padding da última seção */
+    margin-bottom: 0; /* Remove margin da última seção */
 }
 
 h2 {
-    color: #03a9f4; /* Azul para os títulos de seção */
-    border-bottom: 2px solid #03a9f4;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    font-size: 2.5rem; /* Aumento do tamanho da fonte */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
+    margin-bottom: 1.75rem; /* Mais espaçamento abaixo */
+    position: relative; /* Para o efeito de sublinhado */
+    padding-bottom: 0.5rem; /* Espaço para o sublinhado */
 }
 
 h3 {
-    color: #4dd0e1; /* Azul mais claro para subtítulos */
-    margin-top: 25px;
-    margin-bottom: 15px;
+    font-size: 2rem; /* Aumento do tamanho da fonte */
+    color: #2e1042; /* Cor mais escura para o título principal da seção */
+    margin-bottom: 1.5rem; /* Mais espaçamento abaixo */
+    text-align: left; /* Alinhamento à esquerda para consistência */
+    font-weight: 500; /* Um pouco mais de peso */
 }
 
+p {
+    line-height: 1.9; /* Maior espaçamento entre linhas para melhor legibilidade */
+    margin-bottom: 1.2rem; /* Mais espaçamento entre parágrafos */
+    font-size: 1.05rem; /* Levemente maior */
+    color: #5a6268; /* Tom de cinza um pouco mais escuro */
+}
+
+.lead { /* Para parágrafos com a classe 'lead' */
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #495057;
+}
+
+/* --- Imagens --- */
+.img-fluid {
+    margin-top: 150px;
+    width: 400px;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out; /* Adicionado transição para hover */
+}
+
+/* --- Cards --- */
 .card {
-    border: 1px solid #b2ebf2; /* Borda sutil nos cards */
-    border-radius: 6px;
+    border: 1px solid #e9ecef; /* Adicionada uma borda sutil */
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição para box-shadow também */
+    overflow: hidden; /* Garante que a borda arredondada da imagem se ajuste */
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Eleva mais o card no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
+}
+
+.card-body {
+    padding: 1.75rem; /* Mais padding */
 }
 
 .card-title {
-    color: #03a9f4;
+    font-size: 1.35rem; /* Levemente maior */
+    color: #212529; /* Cor mais escura */
+    margin-bottom: 0.85rem;
+    font-weight: 600; /* Mais negrito */
 }
 
-.btn-primary {
-    background-color: #03a9f4 !important;
-    border-color: #03a9f4 !important;
+.card-text {
+    font-size: 1rem; /* Levemente maior */
+    color: #6c757d;
+    margin-bottom: 1.2rem; /* Mais espaçamento */
+}
+
+/* --- Botões --- */
+.btn-primary { /* Adicionado para o botão "Compartilhe sua história" */
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: #0277bd !important;
-    border-color: #0277bd !important;
+    background-color: #0056b3;
+    border-color: #004085;
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
 }
 
-.img-card {
-    height: 200px; /* Altura fixa para as imagens dos cards */
-    object-fit: cover; /* Para manter a proporção da imagem */
-    border-radius: 6px 6px 0 0;
+.btn-outline-secondary { /* Estilo para os botões dos cards de solução */
+    color: #6c757d;
+    border-color: #6c757d;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-.footer {
-    background-color: #03a9f4;
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(108, 117, 125, 0.2);
+    transform: translateY(-2px);
+}
+.btn-outline-dark {
+    background-color: #2e1042;
     color: white;
+    padding: 0.7rem 1.4rem; /* Mais padding */
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-weight: 600; /* Mais negrito */
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    text-transform: uppercase; /* Texto em maiúsculas para botões */
+    letter-spacing: 0.05em; /* Leve espaçamento entre letras */
+}
+
+.btn { /* Adicionado para o botão do card de produção e contato */
+    background-color: #732188;
+    border-color: #4e1b63;
+    color: #fff;
+}
+
+/* --- Rodapé (Footer) --- */
+.footer {
+    background-color: #212529; /* Preto mais escuro para o rodapé */
+    color: #fff;
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+    padding: 40px; /* Mais padding */
+    margin-top: auto; /* Garante que o rodapé fique no final da página */
+    border-radius: 10px 10px 0 0; /* Bordas mais arredondadas na parte superior */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada na parte superior */
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhor visibilidade */
-    border-radius: 50%;
-}
-
-.img-slide {
-    max-height: 400px; /* Altura máxima para as imagens do carrossel */
-    object-fit: contain; /* Garante que toda a imagem seja visível */
-    background-color: #e0f7fa; /* Fundo claro para o carrossel */
-}
-
-/* Estilos específicos para a seção de acessibilidade à água */
-.agua-section {
-    background-color: #e0f7fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.agua-section h4 {
-    color: #03a9f4;
-    margin-bottom: 15px;
-}
-
-.agua-section p {
+.footer p {
+    margin-bottom: 0;
+    font-size: 0.95rem; /* Levemente maior */
+    color: #c4c4c4; /* Tom de cinza mais claro e suave */
     line-height: 1.6;
+}
+
+/* --- Estilos Responsivos --- */
+@media (max-width: 992px) { /* Adicionado um breakpoint para tablets */
+    .navbar-nav .nav-link {
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Cabeçalho */
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header .lead {
+        font-size: 1.2rem;
+    }
+
+    /* Main Container */
+    main.container {
+        padding: 20px; /* Redução do padding em telas menores */
+    }
+
+    /* Seções e Títulos */
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 0.95rem;
+    }
+
+
+    /* Cards */
+    .card {
+        margin-bottom: 1.5rem; /* Espaçamento entre cards em telas menores */
+    }
+
+    /* Botões */
+    .btn-primary,
+    .btn-outline-secondary { /* Incluído os novos botões */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Rodapé */
+    .footer {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) { /* Breakpoint para celulares pequenos */
+    header h1 {
+        font-size: 2rem;
+    }
+    header .lead {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    .card-title {
+        font-size: 1.15rem;
+    }
 }
