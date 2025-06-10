@@ -1,6 +1,7 @@
 AGRINHO-2025 
 Estrutura do projeto
 HTML- Estrutura principal da página, CSS- Estilização da página, Fontes, Arquivos como Index.html E Style.css
+
 Agrinho 2025: Festejando a Conexão Campo e Cidade
 O site do Agrinho 2025 celebra o tema "Festejando a Conexão Campo e Cidade", mostrando como a vida rural e urbana se interligam. Vamos explorar os pilares dessa união: energia rural, acessibilidade à água e produção, com foco em pontos essenciais.
 
